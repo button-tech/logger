@@ -23,4 +23,4 @@ logger.Error("information", err.Error(), logger.Params{
 				"currency": "ETH",
                 ...
 })
-``
+```
