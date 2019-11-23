@@ -24,6 +24,6 @@ logger.Error("information", err.Error(), logger.Params{
                 ...
 })
 ```
-Thanks for the core of the logger to TRUST team !!!
+Thanks for the core of the logger to the TRUST WALLET team !!!
 
 https://github.com/trustwallet/blockatlas
