@@ -89,14 +89,14 @@ func appendMap(root map[string]interface{}, tmp map[string]interface{}) {
 	}
 }
 
-func LogRequest(stop time.Duration, currency, request string) {
+func LogRequest(stop time.Duration, currency, request string, mustBeLogged bool) {
 	if stop > (time.Second * 2) {
 		Error("Response time exception", Params{
 			"currency": currency,
 			"request":  request,
 			"time":     stop.String(),
 		})
-	} else {
+	} else if mustBeLogged {
 		SendMessage(request + ": currency - " + currency + " time - " + stop.String())
 	}
 }
