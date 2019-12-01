@@ -7,20 +7,25 @@ env DSN - sentry token
 ```
 func init() {
 	if err := logger.InitLogger(os.Getenv("DSN")); err != nil {
-		log.Fatal(err)
+	       log.Fatal(err)
 	}
 }
 ```
 
-Log some info:
+Log some info(not error) to sentry:
+```
+logger.SendMessage("Successfully updated!")
+```
+
+Log some info to stdout:
 ```
 logger.Info("Successfully updated!")
 ```
 
 Log errors:
 ```
-logger.Error("information", err.Error(), logger.Params{
-				"currency": "ETH",
+logger.Error("GetBalance", err.Error(), logger.Params{
+	       "currency": "ETH",
                 ...
 })
 ```
